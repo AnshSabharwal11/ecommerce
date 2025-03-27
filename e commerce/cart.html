@@ -1,0 +1,117 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 { text-align: center; color: #4b0082; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th { background-color: #8a2be2; color: white; }
+
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .remove-btn:hover { background-color: darkred; }
+
+        #total {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4b0082;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover { background-color: #6a0dad; }
+    </style>
+</head>
+<body>
+
+    <h1>Your Shopping Cart</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price (₹)</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <p id="total">Total: ₹0</p>
+
+    <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartItems = document.getElementById("cart-items");
+        let totalAmount = 0;
+
+        function updateCartDisplay() {
+            cartItems.innerHTML = "";
+            totalAmount = 0;
+
+            cart.forEach((item, index) => {
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>₹${item.price}</td>
+                    <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
+                `;
+                cartItems.appendChild(row);
+                totalAmount += item.price;
+            });
+
+            document.getElementById("total").innerText = `Total: ₹${totalAmount}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        updateCartDisplay(); // Load cart on page refresh
+    </script>
+
+</body>
+</html>

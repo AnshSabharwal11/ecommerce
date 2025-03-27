@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Etherea</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0e6ef;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4b0082;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4b0082;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .contact-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #4b0082;
+        }
+
+        .contact-section p {
+            line-height: 1.6;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-section button {
+            background-color: #8a2be2;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-section button:hover {
+            background-color: #6a0dad;
+        }
+
+        footer {
+            background-color: #4b0082;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Etherea</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="prak_code.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, feel free to reach out to us using the form below.</p>
+            <form action="submit_contact_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Etherea. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

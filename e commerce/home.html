@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etherea - Everything under the stars</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0e6ef; 
+            color: #333; 
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8); /
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4b0082; 
+        }
+
+        nav {
+            background-color: #fff; 
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4b0082; 
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            grid-gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px; 
+            background-color: white;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h2 {
+            color: #4b0082; 
+        }
+
+        .product button {
+            background-color: #8a2be2; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; 
+        }
+
+        .product button:hover {
+            background-color: #6a0dad; 
+        }
+        #cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart li {
+            margin-bottom: 5px;
+        }
+
+        .categ{
+            margin-top: 50px;
+            margin-left: 130px;
+            margin-right: 130px;
+            gap: 150px;
+            transition: transform 0.3s;
+        }
+        .categ:hover {
+            transform: scale(1.1);
+        }
+        .low_foot {
+            background-color: #4b0082; 
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative; 
+            bottom: 0;
+            width: 100%;
+            margin-top: 210px;
+        }
+        .discount {
+            color: #8a2be2; 
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Etherea</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="prak_code.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div style="display: flex; align-items: center; justify-content: center; ">
+        <div class="categ">
+            <a href="gym.html"><img src="gym.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Gym & Sports</p>
+        </div>
+        <div class="categ">
+            <a href="electronics.html"><img src="h_appliances.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Home Appliances</p>
+        </div>
+        <div class="categ">
+            <a href="homeapp.html"><img src="elctronics.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Electronis</p>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="categ">
+            <a href="fashion.html"><img src="fashion.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Fashion</p>
+        </div>
+        <div class="categ">
+            <a href="studies.html"><img src="studies.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Books and Studies</p>
+        </div>
+        <div class="categ">
+            <a href="fresh.html"><img src="fruits.jpeg" style="width: 180px;"></a>
+            <p style="text-align: center;">Etherea Fresh</p>
+        </div>
+    </div>
+    <div class="low_foot"> 
+        @ 2023 Etherea. All rights reserved.
+    </div>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover effect for category images
+        document.querySelectorAll('.categ img').forEach(img => {
+            img.addEventListener('mouseover', () => {
+                img.style.transform = 'scale(1.1)';
+            });
+            img.addEventListener('mouseout', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+</body>
+</html>
